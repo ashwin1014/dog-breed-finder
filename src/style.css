@@ -44,5 +44,5 @@
 }
 
 #breed-grid{
-    display: inline-block;
+    display: table;
 }

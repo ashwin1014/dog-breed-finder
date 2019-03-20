@@ -5,8 +5,9 @@ import "./style.css";
 const BASE_URL = "https://dog.ceo/api/";
 
 window.addEventListener("load", ()=>{
-    M.Sidenav.init(document.querySelectorAll('.sidenav'));
-    myLayout.fetchDog(`${BASE_URL}breeds/image/random/10`);
+    M.Sidenav.init(document.querySelectorAll('.sidenav'));    
+    // M.AutoInit();
+    myLayout.fetchDog(`${BASE_URL}breeds/image/random/5`);
     myLayout.fetchAllBreeds();
 });
 
@@ -22,7 +23,7 @@ let myLayout = (()=>{
       let dogsGrid;
       if(Array.isArray(doggyData.message)) {
          dogsGrid = doggyData.message.map(dog=>{
-          return `<div class="col s6 m6 l6 xl6">
+          return `<div class="col m6 offset-m3">
           <div class="card">
             <div class="card-image">
               <img src="${dog}"}>
@@ -35,7 +36,7 @@ let myLayout = (()=>{
       });
       document.getElementById('breed-grid').innerHTML = dogsGrid.join('');
       } else {
-        dogsGrid = `<div class="col s6 m6 l6 xl6">
+        dogsGrid = `<div class="col m12 center">
         <div class="card">
           <div class="card-image">
             <img src="${doggyData.message}"}>

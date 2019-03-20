@@ -20547,9 +20547,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 var BASE_URL = "https://dog.ceo/api/";
 window.addEventListener("load", function () {
-  _materializeCss.default.Sidenav.init(document.querySelectorAll('.sidenav'));
+  _materializeCss.default.Sidenav.init(document.querySelectorAll('.sidenav')); // M.AutoInit();
 
-  myLayout.fetchDog("".concat(BASE_URL, "breeds/image/random/10"));
+
+  myLayout.fetchDog("".concat(BASE_URL, "breeds/image/random/5"));
   myLayout.fetchAllBreeds();
 });
 
@@ -20580,11 +20581,11 @@ var myLayout = function () {
 
               if (Array.isArray(doggyData.message)) {
                 dogsGrid = doggyData.message.map(function (dog) {
-                  return "<div class=\"col s6 m6 l6 xl6\">\n          <div class=\"card\">\n            <div class=\"card-image\">\n              <img src=\"".concat(dog, "\"}>\n            </div>           \n            <div class=\"card-action\">\n              <a>").concat(dog.split('breeds/')[1].split('/')[0], "</a>\n            </div>\n          </div>          \n        </div>");
+                  return "<div class=\"col m6 offset-m3\">\n          <div class=\"card\">\n            <div class=\"card-image\">\n              <img src=\"".concat(dog, "\"}>\n            </div>           \n            <div class=\"card-action\">\n              <a>").concat(dog.split('breeds/')[1].split('/')[0], "</a>\n            </div>\n          </div>          \n        </div>");
                 });
                 document.getElementById('breed-grid').innerHTML = dogsGrid.join('');
               } else {
-                dogsGrid = "<div class=\"col s6 m6 l6 xl6\">\n        <div class=\"card\">\n          <div class=\"card-image\">\n            <img src=\"".concat(doggyData.message, "\"}>\n          </div>           \n          <div class=\"card-action\">\n            <a>").concat(doggyData.message ? doggyData.message.split('breeds/')[1].split('/')[0] : null, "</a>\n          </div>\n        </div>          \n      </div>");
+                dogsGrid = "<div class=\"col m12 center\">\n        <div class=\"card\">\n          <div class=\"card-image\">\n            <img src=\"".concat(doggyData.message, "\"}>\n          </div>           \n          <div class=\"card-action\">\n            <a>").concat(doggyData.message ? doggyData.message.split('breeds/')[1].split('/')[0] : null, "</a>\n          </div>\n        </div>          \n      </div>");
                 document.getElementById('breed-grid').innerHTML = dogsGrid;
               }
 
@@ -20721,7 +20722,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "6676" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "1512" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
